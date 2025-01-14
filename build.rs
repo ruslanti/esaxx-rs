@@ -12,7 +12,8 @@ fn main() {
 #[cfg(target_os = "macos")]
 fn main() {
     cc::Build::new()
-        .static_crt(true)
+        .cpp(false)
+        .flag("-fexceptions")
         .file("src/esaxx.cpp")
         .include("src")
         .compile("esaxx");
